@@ -65,6 +65,8 @@ public class DeepestPitAnswer
                         maxDepth = currentDepth;
                     }
                 }
+                // Step 5. Ensuring no overlapping pits are missed.
+                peakIndex = ridgeIndex;
 
             }
         }
