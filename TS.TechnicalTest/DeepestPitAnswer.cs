@@ -45,6 +45,28 @@ public class DeepestPitAnswer
             {
                 ridgeIndex++;
             }
+
+            // step 4. Calculating Depth. A valid pit must be P < Q < R.
+            if (peakIndex < valleyIndex && valleyIndex < ridgeIndex)
+            {
+                // Depth is the minimum distance from the Valley (Q) to the Peak (P) or Ridge (R).
+                int depthP = points[valleyIndex] - points[valleyIndex];
+                int depthR = points[ridgeIndex] - points[valleyIndex];
+
+                int currentDepth = Math.Min(depthP, depthR);
+
+                // Updating the running maximum depth.
+                maxDepth = Math.Max(maxDepth, currentDepth);
+
+                if (points[peakIndex] > 0)
+                {
+                    if (currentDepth > maxDepth)
+                    {
+                        maxDepth = currentDepth;
+                    }
+                }
+
+            }
         }
 
         return maxDepth;
