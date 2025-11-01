@@ -50,7 +50,7 @@ public class DeepestPitAnswer
             if (peakIndex < valleyIndex && valleyIndex < ridgeIndex)
             {
                 // Depth is the minimum distance from the Valley (Q) to the Peak (P) or Ridge (R).
-                int depthP = points[valleyIndex] - points[valleyIndex];
+                int depthP = points[peakIndex] - points[valleyIndex];
                 int depthR = points[ridgeIndex] - points[valleyIndex];
 
                 int currentDepth = Math.Min(depthP, depthR);
