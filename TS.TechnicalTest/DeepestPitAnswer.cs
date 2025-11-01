@@ -37,8 +37,16 @@ public class DeepestPitAnswer
                 valleyIndex++;
             }
 
+            ridgeIndex=valleyIndex;
+
+            //Step 3. Finding Ridge (R) : travel uphill as far as possible.
+            // Stopping when the ascent stops (heights(points)[R] >= heights(points)[R+1]).
+            while (ridgeIndex < totalPoints - 1 && points[ridgeIndex] < points[ridgeIndex + 1])
+            {
+                ridgeIndex++;
+            }
         }
-        
+
         return maxDepth;
     }
 }
