@@ -14,8 +14,22 @@ public class DeepestPitAnswer
         }
 
         int maxDepth = -1; // Using -1 as the initial 'no pit found' signal.
-        int P = 0; // Current Peak index
+        int peakIndex = 0; // P - Current Peak index
+        int valleyIndex = 0; // Q - Current Valley index
+        int ridgeIndex = 0; // R - Current Ridge index
 
+        // Searching for the P-Q-R pattern.
+        while (peakIndex < totalPoints - 2)
+        {
+            // Step 1. Find the Peak (P).
+            // The descent (pit) must start after the peak.
+            while (peakIndex < totalPoints - 1 && points[peakIndex] <= points[peakIndex + 1])
+            {
+                peakIndex++;
+            }
+
+        }
+        
         return maxDepth;
     }
 }
