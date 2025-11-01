@@ -27,6 +27,15 @@ public class DeepestPitAnswer
             {
                 peakIndex++;
             }
+             
+            valleyIndex = peakIndex; // Q starts at the potential peak.
+
+            // Step 2. Finding the Valley (Q): Travel downhill as far as possible.
+            // Stoping when the descent stops (heights / points[Q] <= heights / points [Q+1]).
+            while (valleyIndex < totalPoints - 1 && points[valleyIndex] > points[valleyIndex + 1])
+            {
+                valleyIndex++;
+            }
 
         }
         
